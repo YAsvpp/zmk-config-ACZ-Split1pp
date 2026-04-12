@@ -20,4 +20,6 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: kbName
+    shield: kbName_left
+  - board: nice_nano_v2
+    shield: kbName_right
