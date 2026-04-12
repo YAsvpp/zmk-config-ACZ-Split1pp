@@ -1,14 +1,57 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+// Keys behaviors
+// &trans - Transparent key
+// &lt - Layer Tap behaviour
+
+// Layer behaviors
+// &mo - Enables layer while the layer key is pressed
+// &to - Enables a layer and disables all others (except base layer)
+// &tog - Toggles a layer
+// &sl - Sticky layer stays pressed untill another keys is pressed. Similar to &mo, that has a timer or can be interupted by a keypress. 
+
+// Conditional layers : https://zmk.dev/docs/keymaps/conditional-layers
+
+#define BASE 0
+#define NUMB 1
+#define SYMB 2
+#define ALPHA 3
+#define CONFIG 3
 
 / {  
     keymap {
         compatible = "zmk,keymap";
 
-        base_layer {
+        // layers get indexes based on the order in which they are defined
+        base_layer { // this layer has index 0
             display-name = "Base";
-            bindings = < &kp O    &kp A    &kp E    &kp T   &kp SPACE >;
+            bindings = < &mo SYMB    &to ALPHA    &tog CONFIG  &sl NUMB  &kp N0>;
         };
+        
+        number_layer { // this layer has index 1
+            display-name = "Number";
+            bindings = < &kp N1    &kp N2    &kp N3    &kp N4   &kp N5 >;
+        };
+        
+        symbol_layer { // this layer has index 2
+            display-name = "Symbol";
+            // none key defined in first spot as this will be pressed by the &mo behavior in the base layer
+            bindings = < &none    &kp N2    &kp N3    &kp N4   &kp N5 >;      
+        };
+        
+        alpha_layer { // this layer has index 3
+            display-name = "Alpha";
+            // &to defined to be able to go back to the base layer
+            bindings = < &to BASE    &kp A    &kp B    &kp C   &kp D >;      
+        };
+        
+        config_layer { // this layer has index 4
+            display-name = "Config";
+            // &tog defined to toggle of the config layer
+            // &trans  the transparant key will act like the active layer underneat (in a simple example it would 
+            bindings = < &tog CONFIG    &kp C_VOL_UP    &kp C_VOL_DN    &kp C_MUTE   &trans >;      
+        };
+        
     };
  };
