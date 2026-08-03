@@ -1,0 +1,21 @@
+# Required files for ZMK to recognize the shield
+
+if ACZSPLIT1_LEFT
+
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "ACZsplit1"
+    
+#currently central is the left side
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if ACZSPLIT1_LEFT || ACZSPLIT1_RIGHT
+
+config ZMK_SPLIT
+    default y
+    
+endif
+	
