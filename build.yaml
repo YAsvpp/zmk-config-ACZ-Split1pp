@@ -20,4 +20,6 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: kbName
+    shield: ACZsplit1_left
+  - board: nice_nano_v2
+    shield: ACZsplit1_right
