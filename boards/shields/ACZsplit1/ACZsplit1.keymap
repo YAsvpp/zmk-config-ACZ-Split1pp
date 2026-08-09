@@ -9,7 +9,7 @@
 #define FN 3
 #define ALTGR 4
 
-/ {
+ {
     behaviors {
         // é = ALT+0130
         e_acute: e_acute {
@@ -95,7 +95,7 @@
     };
 
 
-/ {  
+ {  
     keymap {
         compatible = "zmk,keymap";
 
