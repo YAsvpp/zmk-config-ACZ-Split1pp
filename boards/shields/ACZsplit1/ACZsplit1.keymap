@@ -130,7 +130,7 @@
         //  ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓   ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
         //  ┃           ┃           ┃           ┃     ^     ┃           ┃           ┃ BOOTLOADER┃   ┃           ┃           ┃     7     ┃     8     ┃     9     ┃     +     ┃           ┃
         //  ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-        //  ┃           ┃           ┃     <     ┃           ┃     >     ┃           ┃           ┃   ┃           ┃           ┃     4     ┃     5     ┃     6     ┃     <     ┃           ┃
+        //  ┃           ┃           ┃     <     ┃           ┃     >     ┃           ┃  SYS RST  ┃   ┃           ┃           ┃     4     ┃     5     ┃     6     ┃     <     ┃           ┃
         //  ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┛   ┗━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
         //  ┃           ┃           ┃           ┃           ┃           ┃           ┃                           ┃           ┃     1     ┃     2     ┃     3     ┃     >     ┃           ┃
         //  ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓   ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -140,7 +140,7 @@
         //  |           |           |           |           |           |           |           |   |           |           |           |           |           |           |           |
             &trans      &kp AMPS    &e_acute    &kp DQT     &kp APOS    &trans                                  &none       &kp KP_N0   &kp CARET   &kp KP_MULTIPLY &kp KP_MINUS &none
             &trans      &trans      &trans      &trans      &trans      &trans      &bootloader     &trans      &trans      &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_PLUS &trans
-            &trans      &trans      &kp LESS_THAN &trans &kp GREATER_THAN &trans    &trans          &trans      &trans      &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp LT      &trans
+            &trans      &trans      &kp LESS_THAN &trans &kp GREATER_THAN &trans    &sys_reset      &trans      &trans      &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp LT      &trans
             &trans      &trans      &trans      &trans      &trans      &trans                                  &trans      &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp GT      &trans
                                                 &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans
             >;
@@ -154,7 +154,7 @@
         //  ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓   ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
         //  ┃           ┃     à     ┃           ┃     ^     ┃           ┃           ┃           ┃   ┃ BOOTLOADER┃           ┃           ┃     UP    ┃           ┃           ┃           ┃
         //  ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-        //  ┃           ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃   RIGHT   ┃    DOWN   ┃    LEFT   ┃     %     ┃           ┃
+        //  ┃           ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃  SYS RST  ┃           ┃   RIGHT   ┃    DOWN   ┃    LEFT   ┃     %     ┃           ┃
         //  ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┛   ┗━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
         //  ┃           ┃           ┃           ┃           ┃           ┃           ┃                           ┃           ┃     !     ┃     .     ┃     \     ┃     $     ┃           ┃
         //  ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓   ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -164,7 +164,7 @@
         //  |           |           |           |           |           |           |           |   |           |           |           |           |           |           |           |
             &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6                                  &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12  
             &trans      &a_grave    &trans      &trans      &trans      &trans      &trans          &bootloader &trans      &trans      &kp UP      &trans      &trans      &trans
-            &trans      &trans      &trans      &trans      &trans      &trans      &trans          &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp PERCENT &trans      &trans
+            &trans      &trans      &trans      &trans      &trans      &trans      &trans          &sys_reset  &kp LEFT    &kp DOWN    &kp RIGHT   &kp PERCENT &trans      &trans
             &trans      &trans      &trans      &trans      &trans      &trans                                  &trans      &kp EXCL    &kp DOT     &kp BACKSLASH &kp DOLLAR &trans
                                                 &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans
             >;
