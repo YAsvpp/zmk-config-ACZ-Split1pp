@@ -97,7 +97,7 @@
   
     keymap {
         compatible = "zmk,keymap";
-f
+
         default_layer {
             label = "DEFAULT";
 
